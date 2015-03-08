@@ -1,0 +1,68 @@
+MakeMKV v1.9.1 linux(x64-release) started
+The program can't find any usable optical drives.
+Opening files on harddrive at ac134373/
+It appears that you have on-the-fly decryption software enabled. MakeMKV should process discs with most sophisticated protections without help of any 3rd party decryption software. In addition MakeMKV works faster and more reliably when it decrypts data by itself. It is highly recommended to disable such software and restart the application. 
+
+Do you want to continue anyway (errors may follow) ?
+AACS directory not present, assuming unencrypted disc
+Evaluation version, 19 day(s) out of 30 remaining
+File 00020.mpls was added as title #0
+File 00800.mpls was added as title #1
+File 00306.mpls was added as title #2
+Title #00013.mpls has length of 118 seconds which is less than minimum title length of 120 seconds and was therefore skipped
+Title #00000.mpls has length of 118 seconds which is less than minimum title length of 120 seconds and was therefore skipped
+File 00115.m2ts was added as title #3
+Title #00113.m2ts has length of 57 seconds which is less than minimum title length of 120 seconds and was therefore skipped
+Title #00020.m2ts has length of 59 seconds which is less than minimum title length of 120 seconds and was therefore skipped
+Title 00023.m2ts is equal to title 00800.mpls and was skipped
+Title #00015.m2ts has length of 25 seconds which is less than minimum title length of 120 seconds and was therefore skipped
+File 00122.m2ts was added as title #4
+File 00117.m2ts was added as title #5
+Title #00120.m2ts has length of 99 seconds which is less than minimum title length of 120 seconds and was therefore skipped
+Title #00014.m2ts has length of 25 seconds which is less than minimum title length of 120 seconds and was therefore skipped
+Title #00018.m2ts has length of 25 seconds which is less than minimum title length of 120 seconds and was therefore skipped
+Title #00112.m2ts has length of 5 seconds which is less than minimum title length of 120 seconds and was therefore skipped
+Title #00024.m2ts has length of 4 seconds which is less than minimum title length of 120 seconds and was therefore skipped
+Title #00114.m2ts has length of 4 seconds which is less than minimum title length of 120 seconds and was therefore skipped
+Title #00021.m2ts has length of 68 seconds which is less than minimum title length of 120 seconds and was therefore skipped
+File 00111.m2ts was added as title #6
+Title #00016.m2ts has length of 59 seconds which is less than minimum title length of 120 seconds and was therefore skipped
+File 00110.m2ts was added as title #7
+File 00121.m2ts was added as title #8
+Title #00022.m2ts has length of 63 seconds which is less than minimum title length of 120 seconds and was therefore skipped
+File 00123.m2ts was added as title #9
+File 00116.m2ts was added as title #10
+Title #00017.m2ts has length of 59 seconds which is less than minimum title length of 120 seconds and was therefore skipped
+File 00119.m2ts was added as title #11
+Title #00019.m2ts has length of 14 seconds which is less than minimum title length of 120 seconds and was therefore skipped
+Operation successfully completed
+Saving 1 titles into directory /library/movie using profile 'Copy All Tracks' from file '/home/user/.MakeMKV/makemkvcon.mmcp.xml'
+Forced subtitles track #10 turned out to be empty and was removed from output file
+Forced subtitles track #12 turned out to be empty and was removed from output file
+Forced subtitles track #14 turned out to be empty and was removed from output file
+Forced subtitles track #16 turned out to be empty and was removed from output file
+Forced subtitles track #18 turned out to be empty and was removed from output file
+Forced subtitles track #20 turned out to be empty and was removed from output file
+Forced subtitles track #22 turned out to be empty and was removed from output file
+Forced subtitles track #24 turned out to be empty and was removed from output file
+Forced subtitles track #26 turned out to be empty and was removed from output file
+Forced subtitles track #28 turned out to be empty and was removed from output file
+Forced subtitles track #30 turned out to be empty and was removed from output file
+Forced subtitles track #32 turned out to be empty and was removed from output file
+Forced subtitles track #34 turned out to be empty and was removed from output file
+Forced subtitles track #36 turned out to be empty and was removed from output file
+Forced subtitles track #38 turned out to be empty and was removed from output file
+Forced subtitles track #40 turned out to be empty and was removed from output file
+Forced subtitles track #42 turned out to be empty and was removed from output file
+Forced subtitles track #44 turned out to be empty and was removed from output file
+Forced subtitles track #46 turned out to be empty and was removed from output file
+Forced subtitles track #48 turned out to be empty and was removed from output file
+Forced subtitles track #50 turned out to be empty and was removed from output file
+Forced subtitles track #52 turned out to be empty and was removed from output file
+Forced subtitles track #54 turned out to be empty and was removed from output file
+Forced subtitles track #56 turned out to be empty and was removed from output file
+Forced subtitles track #58 turned out to be empty and was removed from output file
+Forced subtitles track #60 turned out to be empty and was removed from output file
+Forced subtitles track #62 turned out to be empty and was removed from output file
+1 titles saved
+Copy complete. 1 titles saved.
