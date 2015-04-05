@@ -5,10 +5,10 @@ import subprocess
 import unittest
 import unittest.mock
 
-sys.path.append(os.path.abspath('..'))
+sys.path.append(os.path.abspath('.'))
 from script import bluray_to_mkv as script
 
-FIXTURES_DIR = pathlib.Path('./test_fixtures')
+FIXTURES_DIR = pathlib.Path('tests/fixtures')
 
 
 class ScriptTest(unittest.TestCase):

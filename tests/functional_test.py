@@ -4,7 +4,7 @@ import sys
 import subprocess
 import unittest
 
-sys.path.append(os.path.abspath('..'))
+sys.path.append(os.path.abspath('.'))
 from script.bluray_to_mkv import (
     ENVAR_DOWNLOAD_DIRECTORY,
     ENVAR_DOWNLOAD_STATUS,
