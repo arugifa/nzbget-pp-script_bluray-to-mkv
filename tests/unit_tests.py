@@ -1,4 +1,3 @@
-import logging
 import os
 import sys
 import pathlib
@@ -13,10 +12,6 @@ FIXTURES_DIR = pathlib.Path('./test_fixtures')
 
 
 class ScriptTest(unittest.TestCase):
-    @classmethod
-    def setUpClass(cls):
-        script.log.addHandler(logging.NullHandler())
-
     @unittest.mock.patch('script.bluray_to_mkv.subprocess.check_output')
     def test_find_makemkv_binary(self, mock_subprocess_output):
         binary_path = pathlib.PurePath('/usr/bin', script.MAKEMKV_BINARY)

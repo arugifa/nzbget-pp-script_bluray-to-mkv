@@ -42,14 +42,16 @@ POSTPROCESS_EXIT_CODE_SUCCESS = 93  # Returned code when post-process is success
 
 REQUIRED_OPTIONS = (ENVAR_MAKEMKV_PROFILE, ENVAR_MKV_DIRECTORY)
 
-log = logging.getLogger(__name__)
+
+logger = logging.getLogger(__name__)
+logger.addHandler(logging.NullHandler())
 
 
 def is_configured():
     missing_opt = False
     for option in REQUIRED_OPTIONS:
         if option not in os.environ:
-            log.error("The following configuration option must be defined: {}.".format(option))
+            logger.error("The following configuration option must be defined: {}.".format(option))
             missing_opt = True
     if missing_opt:
         return False
@@ -61,7 +63,7 @@ def find_makemkv_binary():
         bin_path = subprocess.check_output(
             ['which', MAKEMKV_BINARY], stderr=subprocess.DEVNULL, universal_newlines=True)
     except subprocess.CalledProcessError:
-        log.error("MakeMKV binary not found.")
+        logger.error("MakeMKV binary not found.")
         return None
     return pathlib.PurePath(bin_path.rstrip())
 
@@ -84,11 +86,11 @@ def find_blu_ray_sources(path, multi=1):
         sources_number = len(sources)
         if multi == 1:
             if sources_number > 1:
-                log.warning("More than one blu-ray source was found.")
+                logger.warning("More than one blu-ray source was found.")
             sources = sources[0]
         elif multi > 1:
             if sources_number != multi:
-                log.warning("{0} blu-ray sources were found ({1} asked).".format(sources_number, multi))
+                logger.warning("{0} blu-ray sources were found ({1} asked).".format(sources_number, multi))
             sources = sources[:multi]
 
     return sources_type, sources
@@ -129,13 +131,13 @@ def identify_movie_titles(source, multi=1):
     if multi == 1:
         if len(titles) > 1:
             if titles[0]['chapters'] == titles[1]['chapters']:
-                log.warning("Two movie titles with the same number of chapters were found.")
+                logger.warning("Two movie titles with the same number of chapters were found.")
                 return None
         return titles[0]
     elif multi > 1:
         titles_number = len(titles)
         if multi > titles_number:
-            log.warning("Only {0} titles are available ({1} asked).".format(titles_number, multi))
+            logger.warning("Only {0} titles are available ({1} asked).".format(titles_number, multi))
         return titles[:multi]
 
     return titles
@@ -150,13 +152,13 @@ def convert_to_mkv(movie, source, title, destination, profile):
     line = p.stdout.readline()
     while line:
         line = line.rstrip()
-        log.debug(line)
+        logger.debug(line)
         line = p.stdout.readline()
     p.wait()
 
     mkv_path = destination / title['fname']
     if p.returncode != 0:
-        log.error("An error was encountered during the conversion. Please check logs.")
+        logger.error("An error was encountered during the conversion. Please check logs.")
         try:
             mkv_path.unlink()
         except OSError:
@@ -168,19 +170,19 @@ def convert_to_mkv(movie, source, title, destination, profile):
         mkv_path.rename(mkv_new_path)
     except OSError:
         if not mkv_path.is_file():
-            log.error("An error was encountered during the conversion. Please check logs.")
+            logger.error("An error was encountered during the conversion. Please check logs.")
         else:
-            log.warning("Unable to rename {} to {}".format(mkv_path, mkv_new_path))
+            logger.warning("Unable to rename {} to {}".format(mkv_path, mkv_new_path))
         return None
 
     return mkv_new_path
 
 
 if __name__ == '__main__':
-    log.setLevel(logging.DEBUG)
+    logger.setLevel(logging.DEBUG)
     console = logging.StreamHandler()
     console.setFormatter(NZBGET_LOG_FORMAT)
-    log.addHandler(console)
+    logger.addHandler(console)
 
     if is_configured() is False:
         sys.exit(POSTPROCESS_EXIT_CODE_ERROR)
