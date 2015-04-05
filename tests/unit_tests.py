@@ -1,10 +1,12 @@
 import logging
 import os
+import sys
 import pathlib
 import subprocess
 import unittest
 import unittest.mock
 
+sys.path.append(os.path.abspath('..'))
 from script import bluray_to_mkv as script
 
 FIXTURES_DIR = pathlib.Path('./test_fixtures')
